@@ -7,6 +7,7 @@
         <groupId>com.upgrad.proman</groupId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
+
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>proman-api</artifactId>
@@ -42,7 +43,6 @@
             <version>2.6.1</version>
             <scope>compile</scope>
         </dependency>
-
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
