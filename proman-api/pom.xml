@@ -14,6 +14,12 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.2.2</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
             <groupId>com.upgrad.proman</groupId>
             <artifactId>proman-service</artifactId>
             <version>${project.version}</version>
