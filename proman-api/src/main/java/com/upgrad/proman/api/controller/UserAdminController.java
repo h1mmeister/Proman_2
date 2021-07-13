@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/")
 public class UserAdminController {
 
-    public ResponseEntity<UserDetailsResponse> getUser() {
+    public ResponseEntity<UserDetailsResponse> getUser(final String userUuid) {
 
     }
 }
