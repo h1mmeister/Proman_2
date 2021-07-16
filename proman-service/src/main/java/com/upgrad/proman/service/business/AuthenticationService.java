@@ -7,6 +7,6 @@ import org.springframework.stereotype.Service;
 public class AuthenticationService {
 
     public UserEntity authenticate(final String username, final String password) {
-        
+
     }
 }
