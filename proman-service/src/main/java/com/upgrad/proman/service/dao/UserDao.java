@@ -1,5 +1,6 @@
 package com.upgrad.proman.service.dao;
 
+import com.upgrad.proman.service.entity.UserAuthTokenEntity;
 import com.upgrad.proman.service.entity.UserEntity;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.stereotype.Repository;
@@ -36,5 +37,14 @@ public class UserDao {
         } catch (NoResultException nre) {
             return null;
         }
+    }
+
+    public UserAuthTokenEntity createAuthToken(final UserAuthTokenEntity userAuthTokenEntity) {
+        entityManager.persist(userAuthTokenEntity);
+        return userAuthTokenEntity;
+    }
+
+    public void updateUserEntity(final UserEntity updatedUserEntity) {
+        entityManager.merge(updatedUserEntity);
     }
 }
