@@ -22,6 +22,7 @@ io\swagger\Swagger2SpringBoot$ExitException.class
 com\upgrad\proman\api\model\UserDetailsResponse.class
 com\upgrad\proman\api\model\UserSummaryType.class
 io\swagger\api\NotFoundException.class
+com\upgrad\proman\api\model\AuthorizedUserResponse.class
 com\upgrad\proman\api\PromanApiApplication.class
 io\swagger\RFC3339DateFormat.class
 com\upgrad\proman\api\model\UpdateUserRequest.class
