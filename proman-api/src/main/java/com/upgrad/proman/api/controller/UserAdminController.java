@@ -14,6 +14,9 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.ZonedDateTime;
+import java.util.UUID;
+
 @RestController
 @RequestMapping("/")
 public class UserAdminController {
@@ -31,6 +34,18 @@ public class UserAdminController {
 
     @RequestMapping(method = RequestMethod.POST, path = "/users", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<CreateUserResponse> createUser(@RequestBody final CreateUserRequest userRequest){
+        UserEntity userEntity = new UserEntity();
+        userEntity.setUuid(UUID.randomUUID().toString());
+        userEntity.setFirstName(userRequest.getFirstName());
+        userEntity.setLastName(userRequest.getLastName());
+        userEntity.setEmail(userRequest.getEmailAddress());
+        userEntity.setMobilePhone(userRequest.getMobileNumber());
+        userEntity.setStatus(UserStatus.ACTIVE.getCode());
+        userEntity.setCreatedAt(ZonedDateTime.now());
+        userEntity.setCreatedBy("API-BACKEND.");
 
+        final UserEntity createdUser = userAdminBusinessService.createUser(userEntity);
+        final CreateUserResponse userResponse = new CreateUserResponse().id(createdUser.getUuid()).status(UserStatusType.ACTIVE);
+        return new ResponseEntity<CreateUserResponse>(userResponse, HttpStatus.CREATED);
     }
 }
