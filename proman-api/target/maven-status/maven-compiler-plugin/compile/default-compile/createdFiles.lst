@@ -8,6 +8,7 @@ com\upgrad\proman\api\model\CreateUserRequest.class
 com\upgrad\proman\api\model\RoleRequest.class
 io\swagger\api\ApiResponseMessage.class
 com\upgrad\proman\api\model\UserOperationRequest.class
+com\upgrad\proman\api\controller\AuthenticationController.class
 com\upgrad\proman\api\controller\SignupController.class
 com\upgrad\proman\api\controller\UserAdminController.class
 com\upgrad\proman\api\config\SwaggerConfiguration.class
